@@ -50,11 +50,6 @@ def recommendations_for_user(user_id, top_n=10, min_rating=3.5, exclude_watched=
     print(f"Ошибка предсказания для пользователя {user_id}: {e}")
     return None
 
-# rec = recommendations_for_user(3)
-# rec_df = pd.DataFrame(rec)
-# rec_df = rec_df.merge(movies[['movieId', 'title']], on='movieId', how='left')
-# print(rec_df)
-# print(rec)
 
 app = Flask(__name__)
 
@@ -70,4 +65,4 @@ def predict():
 
 if __name__ == '__main__':
 
-    app.run('localhost', 5000)
+    app.run(host='0.0.0.0', port=5000)
